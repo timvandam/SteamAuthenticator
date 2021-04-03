@@ -3,6 +3,8 @@ import styles from '@styles/dashboard.module.scss'
 import React from 'react'
 import CenteredFlexBox from '@components/CenteredFlexBox'
 import Table, { Row } from '@components/Table'
+import ProgressBar from '@components/ProgressBar'
+import TwoFAProgressBar from '@components/TwoFAProgressBar'
 
 const Dashboard: React.FC = () => {
 	return (
@@ -14,8 +16,18 @@ const Dashboard: React.FC = () => {
 			{/*todo: limit the size of the table*/}
 			<CenteredFlexBox>
 				<Table columns={['Username', '2FA Code']}>
-					<Row>row one</Row>
-					<Row>row two</Row>
+					<Row>
+						<td>account_one</td>
+						<td>
+							<TwoFAProgressBar text="123AB" />
+						</td>
+					</Row>
+					<Row>
+						<td>account_two</td>
+						<td>
+							<TwoFAProgressBar text="123AB" />
+						</td>
+					</Row>
 				</Table>
 			</CenteredFlexBox>
 		</CenteredFlexBox>

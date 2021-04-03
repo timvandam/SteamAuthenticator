@@ -1,0 +1,17 @@
+.progressBar {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: transparent;
+
+	.progress {
+		transition: 1s linear;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		position: absolute;
+		content: ' ';
+		height: 100%;
+		background-color: #424242;
+	}
+}

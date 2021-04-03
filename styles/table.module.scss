@@ -1,22 +1,47 @@
 .table {
 	border-collapse: collapse;
-	width: 100%;
-	height: 100%;
+	width: 80%;
+	max-height: 80%;
+	font-size: 1.4rem;
+
+	&,
+	tr,
+	td,
+	th {
+		border: none;
+	}
+
+	td {
+		height: 100%;
+		z-index: 0;
+		overflow: hidden;
+		position: relative;
+	}
 }
 
 .tableHead {
 	background-color: #343434;
 	font-weight: bold;
 	text-align: center;
+	height: 3em;
 
-	& th {
+	th {
 		padding: 1em;
 	}
 
-	& th:first-child {
+	th:first-child {
 		border-top-left-radius: 0.3em;
 	}
-	& th:last-child {
+	th:last-child {
 		border-top-right-radius: 0.3em;
 	}
+}
+
+.tableBody {
+	background-color: #232323;
+	text-align: center;
+}
+
+.row {
+	height: 3em;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '@styles/centeredflexbox.module.scss'
-import concatClasses from '@util/concatClasses'
+import styles from '@styles/centeredFlexBox.module.scss'
+import classes from '@util/classes'
 
 type CenteredFlexBoxProps = {
 	direction?: 'column' | 'row'
@@ -9,10 +9,11 @@ type CenteredFlexBoxProps = {
 const CenteredFlexBox: React.FC<CenteredFlexBoxProps> = ({ direction = 'column', children }) => {
 	return (
 		<div
-			className={concatClasses(
-				styles.centeredflexbox,
-				direction === 'column' ? styles.column : styles.row
-			)}
+			className={classes({
+				[styles.centeredFlexBox]: true,
+				[styles.column]: direction === 'column',
+				[styles.row]: direction === 'row',
+			})}
 		>
 			{children}
 		</div>

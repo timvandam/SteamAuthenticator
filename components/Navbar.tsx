@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from '@styles/navbar.module.scss'
 import { useRouter } from 'next/router'
-import concatClasses from '@util/concatClasses'
+import classes from '@util/classes'
 
 type NavButtonProps = { href: string }
 
@@ -13,7 +13,7 @@ const NavButton: React.FC<NavButtonProps> = ({ href, children }) => {
 
 	return (
 		<Link href={href}>
-			<a className={concatClasses(styles.navlink, active && styles.active)}>{children}</a>
+			<a className={classes({ [styles.navLink]: true, [styles.active]: active })}>{children}</a>
 		</Link>
 	)
 }

@@ -4,15 +4,14 @@ import styles from '@styles/table.module.scss'
 type TableRowProps = {}
 
 export const Row: React.FC<TableRowProps> = ({ children }) => {
-	return <tr>{children}</tr>
+	return <tr className={styles.row}>{children}</tr>
 }
 
 type TableProps = {
-	children: typeof Row[]
-	columns: string[]
+	columns: readonly string[]
 }
 
-const Table: React.FC<TableProps> = ({ children, columns }: { children: typeof Row[] }) => {
+const Table: React.FC<TableProps> = ({ children, columns }) => {
 	return (
 		<table className={styles.table}>
 			<thead className={styles.tableHead}>
@@ -22,11 +21,7 @@ const Table: React.FC<TableProps> = ({ children, columns }: { children: typeof R
 					))}
 				</Row>
 			</thead>
-			<tbody>
-				{children.map((row, i) => (
-					<td key={i}>{row}</td>
-				))}
-			</tbody>
+			<tbody className={styles.tableBody}>{children}</tbody>
 		</table>
 	)
 }
